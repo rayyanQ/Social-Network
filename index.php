@@ -22,9 +22,9 @@
 				//login form
 				$("#log_in").on("submit", function(event){
 					event.preventDefault();
-					var email = $("#email_log").val();
+					var phone_email = $("#phone_email_log").val();
 					var password = $("#pass_log").val();
-					$.post('ajax/log_in.php',{email:email,password:password},function(data){
+					$.post('ajax/log_in.php',{phone_email:phone_email,password:password},function(data){
 						$('#error').html(data);
 					});
 				});
@@ -46,14 +46,14 @@
 				});
 
 				//tab functionality
-				function si() {
-					document.getElementById("log_in").style.display = "none";
-					document.getElementById("sign_up").style.display = "block";	
-				}
-				function li() {
-					document.getElementById("log_in").style.display = "block";
-					document.getElementById("sign_up").style.display = "none";	
-				}
+				$("#su").on("click", function(){
+					$("#log_in").hide();
+					$("#sign_up").show();
+				});
+				$("#li").on("click", function(){
+					$("#log_in").show();
+					$("#sign_up").hide();
+				});
 			});
 		</script>
 	</head>
@@ -61,17 +61,17 @@
 		<header><a href="index.php">Hubuddies</a></header>
 		<center id="body">
 				<form method="post" class="form" id="log_in">
-					<h2 class="selected">Log In</h2><h2> | </h2><h2 class="un_selected" onclick="si()">Sign Up</h2><br>
-					<input type="email" placeholder="Email" class="txt" id="email_log" required="required"><br>
-					<input type="password" placeholder="Password" class="txt" id="pass_log" required="required"><br>
+					<h2 class="selected">Log In</h2><h2> | </h2><h2 id="su" class="un_selected">Sign Up</h2><br>
+					<input type="text" class="txt" id="phone_email_log" placeholder="Email/Mobile Number" required="required"><br>
+					<input type="password" class="txt" id="pass_log" placeholder="Password" required="required"><br>
 					<b id="error"></b><br>
 					<input type="submit" value="Submit" class="submit">
 				</form>
 				<form method="post" class="form" id="sign_up">
-					<h2 class="un_selected" onclick="li()">Log In</h2><h2> | </h2><h2 class="selected">Sign Up</h2><br>
-					<input type="text" placeholder="Username*" class="txt" required="required" id="username"><br>
-					<input type="email" placeholder="Email*" class="txt" required="required" id="email_sign"><br>
-					<input type="password" placeholder="Password*" class="txt" required="required" id="pass_sign"><br>
+					<h2 class="un_selected" id="li">Log In</h2><h2> | </h2><h2 class="selected">Sign Up</h2><br>
+					<input type="text" class="txt" id="username" placeholder="Username*" required="required"><br>
+					<input type="email" class="txt" id="email_sign" placeholder="Email*" required="required"><br>
+					<input type="password" class="txt" id="pass_sign" placeholder="Password*" required="required"><br>
 					<b id="make"></b><br>
 					<input type="submit" value="Submit" class="submit">
 				</form>
