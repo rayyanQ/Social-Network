@@ -1,0 +1,231 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(https://fonts.gstatic.com/s/raleway/v11/rr0ijB5_2nAJsAoZ6vECXRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(https://fonts.gstatic.com/s/raleway/v11/RJMlAoFXXQEzZoMSUteGWFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/ZKwULyCG95tk6mOqHQfRBCEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: Raleway;
+	background: #efefef;
+}
+#glass{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 2;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+header{
+	top: 0px;
+	width: 98%;
+	line-height: 150%;
+	background: #3cade6;
+	color: #fff;
+	font-size: 3em;
+	padding-left: 2%;
+	position: fixed;
+	z-index: 1;
+}
+#menu{
+	display: none;
+}
+#menu + label{
+	position: fixed;
+	right: 2%;
+	top: 1.5em;
+	z-index: 3;
+	color: #fff;
+}
+#menu + label:hover{
+	cursor: pointer;
+}
+#menu + label p{
+	width: 20px;
+	border: 1px solid #fff;
+	margin: 5px;
+}
+#nav{
+	width: 300px;
+	min-width: 20%;
+	max-width: 90%;
+	height: 100%;
+	top: 4.5em;
+	position: fixed;
+	right: 0;
+	background: #fff;
+	display: none;
+	z-index: 3;
+}
+.nav_item{
+	display: block;
+	width: 100%;
+	padding-top: 10%;
+	text-align: center;
+	color: #555;
+	font-size: 1.5em;
+}
+#body{
+	margin-top: 7em;
+	width: 100%;
+}
+#menu:checked ~ #nav{
+	display: block;
+}
+@media screen and (min-width: 1251px){
+	#menu:checked ~ #body{
+		width: 80%;
+	}
+	#nav{
+		width: 20%;
+	}
+}
+@media screen and (min-width: 1000px) and (max-width: 1250px){
+	#menu:checked ~ #body{
+		width: 75%;
+	}
+	#nav{
+		width: 25%;
+	}
+}
+@media screen and (min-width: 951px) and (max-width: 999px){
+	#menu:checked ~ #body{
+		width: 70%;
+	}
+	#nav{
+		width: 30%;
+	}
+}
+@media screen and (max-width: 950px){
+	#menu:checked ~ #body{
+		margin-top: 7em;
+		width: 100%;
+	}
+	#menu:checked ~ #glass{
+		display: block;
+	}
+	#menu:checked ~ #nav{
+		display: block;
+	}
+}
+#postbox{
+	width: 600px;
+	min-width: 60%;
+	max-width: 90%;
+	height: 200px;
+	max-height: 20%;
+	background: #fff;
+	box-shadow: 0px 0px 5px 0px #ccc;
+}
+#post_txt{
+	margin: 5px;
+	width: 90%;
+	height: 140px;
+	min-height: 70%;
+	resize: none;
+	border-color: #ccc;
+}
+.privacy{
+	display: none;
+}
+.privacy + label{
+	color: #555;
+	float: left;
+	margin-left: 5%;
+	font-weight: bold;
+	cursor: pointer;
+}
+.privacy:checked + label{
+	color: #3cade6;
+}
+#submit{
+	width: 100px;
+	min-width: 20%;
+	height: 35px;
+	background: #3cade6;
+	border: 1px solid #2f9fd6;
+	color: #fff;
+	float: right;
+	margin-right: 5%;
+}
+.post{
+	width: 600px;
+	min-width: 60%;
+	max-width: 90%;
+	background: #fff;
+	margin-top: 20px;
+	box-shadow: 0px 0px 5px 0px #ccc;
+}
+.added_by{
+	float: left;
+	margin: 2%;
+	text-align: left;
+	width: 100%;
+}
+.body{
+	margin: 15% 5% 0%;
+}
+.comments{
+	border-top: 1px solid #ccc;
+}
+.comment_area{
+	float:left;
+	width: 90%;
+}
+@media screen and (max-width: 405px){
+	.comment_area{
+		width: 85%;
+	}
+}
+.comment_img{
+	width: 30px;
+	height: 30px;
+}
+.comment_box{
+	height: 30px;
+	width: 100%;
+	border: 1px solid #ccc;
+	color: #555;
+	font-family: Raleway;
+}
+.comment{
+	text-align: left;
+	padding: 0% 2%;
+	width: 96%;
+	min-height: 30px;
+}
+	//3cade6 primary blue
+	//2f9fd6 blue
