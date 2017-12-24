@@ -10,14 +10,16 @@
 		<title>Hubuddies</title>
 		<meta charset="UTF-8">
 		<meta name="title" content="Hubuddies | Find new friends at hubuddies">
-		<meta name="description" content="Make new friends at hubuddies.com">
-		<meta name="keywords" content="rayyan,hubuddies,hubuddies.com,social network, text only, facebook, ahmed, quraishi">
+		<meta name="description" content="Find new friends at hubuddies.com">
+		<meta name="keywords" content="rayyan,hubuddies,hubuddies.com,social network, ahmed, quraishi">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<script type="text/javascript" src="./js/jquery.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
+
+				//login form
 				$("#log_in").on("submit", function(event){
 					event.preventDefault();
 					var email = $("#email_log").val();
@@ -26,6 +28,8 @@
 						$('#error').html(data);
 					});
 				});
+
+				//sign up form
 				$("#sign_up").on("submit", function(event){
 					event.preventDefault();
 					var username = $("#username").val();
@@ -40,20 +44,20 @@
 						$('#make').html("Your password must contain at least 5 characters");
 					}
 				});
+
+				//tab functionality
+				function si() {
+					document.getElementById("log_in").style.display = "none";
+					document.getElementById("sign_up").style.display = "block";	
+				}
+				function li() {
+					document.getElementById("log_in").style.display = "block";
+					document.getElementById("sign_up").style.display = "none";	
+				}
 			});
 		</script>
 	</head>
 	<body>
-		<script type="text/javascript">
-			function si() {
-				document.getElementById("log_in").style.display = "none";
-				document.getElementById("sign_up").style.display = "block";	
-			}
-			function li() {
-				document.getElementById("log_in").style.display = "block";
-				document.getElementById("sign_up").style.display = "none";	
-			}
-		</script>
 		<header><a href="index.php">Hubuddies</a></header>
 		<center id="body">
 				<form method="post" class="form" id="log_in">
@@ -72,6 +76,5 @@
 					<input type="submit" value="Submit" class="submit">
 				</form>
 		</center>
-		<footer></footer>
 	</body>
 </html>
