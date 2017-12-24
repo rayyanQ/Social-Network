@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,100);
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: Raleway;
+	background: #efefef;
+}
+#glass{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 2;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+header{
+	top: 0px;
+	width: 98%;
+	line-height: 150%;
+	background: #3cade6;
+	color: #fff;
+	font-size: 3em;
+	padding-left: 2%;
+	position: fixed;
+	z-index: 1;
+}
+#menu{
+	display: none;
+}
+#menu + label{
+	position: fixed;
+	right: 2%;
+	top: 1.5em;
+	z-index: 3;
+	color: #fff;
+}
+#menu + label:hover{
+	cursor: pointer;
+}
+#menu + label p{
+	width: 20px;
+	border: 1px solid #fff;
+	margin: 5px;
+}
+#nav{
+	width: 300px;
+	min-width: 20%;
+	max-width: 90%;
+	height: 100%;
+	top: 4.5em;
+	position: fixed;
+	right: 0;
+	background: #fff;
+	display: none;
+	z-index: 3;
+}
+.nav_item{
+	display: block;
+	width: 100%;
+	padding-top: 10%;
+	text-align: center;
+	color: #555;
+	font-size: 1.5em;
+}
+#body{
+	margin-top: 250px;
+	width: 100%;
+}
+#menu:checked ~ #nav{
+	display: block;
+}
+@media screen and (min-width: 1251px){
+	#menu:checked ~ #body{
+		width: 80%;
+	}
+	#nav{
+		width: 20%;
+	}
+}
+@media screen and (min-width: 1000px) and (max-width: 1250px){
+	#menu:checked ~ #body{
+		width: 75%;
+	}
+	#nav{
+		width: 25%;
+	}
+}
+@media screen and (min-width: 951px) and (max-width: 999px){
+	#menu:checked ~ #body{
+		width: 70%;
+	}
+	#nav{
+		width: 30%;
+	}
+}
+@media screen and (max-width: 950px){
+	#menu:checked ~ #body{
+		width: 100%;
+	}
+	#menu:checked ~ #glass{
+		display: block;
+	}
+	#menu:checked ~ #nav{
+		display: block;
+	}
+}
+#bg{
+	background: url('../img/bg.jpg') 100% fixed;
+	width: 100%;
+	height: 250px;
+	min-height: 20%;
+	max-height: 50%;
+	background-size: cover;
+	position: absolute;
+	z-index:-1;
+	top: 4.5em;
+}
+#postbox{
+	width: 600px;
+	min-width: 60%;
+	max-width: 90%;
+	height: 200px;
+	max-height: 20%;
+	background: #fff;
+	box-shadow: 0px 0px 5px 0px #ccc;
+}
+#post_txt{
+	margin: 5px;
+	width: 90%;
+	height: 140px;
+	min-height: 70%;
+	resize: none;
+	border-color: #ccc;
+}
+.privacy{
+	display: none;
+}
+.privacy + label{
+	color: #555;
+	float: left;
+	margin-left: 5%;
+	font-weight: bold;
+	cursor: pointer;
+}
+.privacy:checked + label{
+	color: #3cade6;
+}
+#submit{
+	width: 100px;
+	min-width: 20%;
+	height: 35px;
+	background: #3cade6;
+	border: 1px solid #2f9fd6;
+	color: #fff;
+	float: right;
+	margin-right: 5%;
+}
+.post{
+	width: 600px;
+	min-width: 60%;
+	max-width: 90%;
+	background: #fff;
+	margin-top: 20px;
+	box-shadow: 0px 0px 5px 0px #ccc;
+}
+.added_by{
+	float: left;
+	margin: 2%;
+	text-align: left;
+	width: 100%;
+}
+.body{
+	margin: 15% 5% 0%;
+}
+.comments{
+	border-top: 1px solid #ccc;
+}
+.comment_area{
+	float:left;
+	width: 90%;
+}
+@media screen and (max-width: 405px){
+	.comment_area{
+		width: 85%;
+	}
+}
+.comment_img{
+	width: 30px;
+	height: 30px;
+}
+.comment_box{
+	height: 30px;
+	width: 100%;
+	border: 1px solid #ccc;
+	color: #555;
+	font-family: Raleway;
+}
+.comment{
+	text-align: left;
+	padding: 0% 2%;
+	width: 96%;
+	min-height: 30px;
+}
+	//3cade6 primary blue
+	//2f9fd6 blue

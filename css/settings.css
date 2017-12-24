@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,100);
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: Raleway;
+	background: #efefef;
+	overflow: hidden;
+}
+header{
+	top: 0px;
+	width: 98%;
+	line-height: 150%;
+	background: #3cade6;
+	color: #fff;
+	font-size: 3em;
+	padding-left: 2%;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+#body{
+	margin: 0% 10%;
+	position: absolute;
+	width: 80%;
+	height: 90%;
+}
+.form{
+	width: 500px;
+	min-width: 50%;
+	max-width: 90%;
+	background: #fff;
+	box-shadow: 0px 0px 5px 0px #ccc;
+	padding: 5%;
+	color: #555;
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.selected{
+	color: #3cade6;
+	margin: 0px;
+}
+.txt{
+	width: 80%;
+	min-height: 20%;
+	height: 2em;
+	margin-top: 1em;
+	padding-left: 1em;
+}
+input[name=gender], input[name=dob]{
+	margin-top: 1em;
+}
+#error{
+	color: #555;
+}
+.submit{
+	width: 100px;
+	min-width: 20%;
+	max-width: 50%;
+	height: 3em;
+	background: #fff;
+	border: 1px solid #555;
+	color: #555;
+}
+.submit:hover{
+	color: #3cade6;
+	border-color: #3cade6;
+}
+#skip{
+	float: right;
+	margin: 1em;
+	color: #333;
+}
+	//3cade6 primary blue
+	//2f9fd6 blue
