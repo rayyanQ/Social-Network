@@ -36,7 +36,7 @@
 					var email = $("#email_sign").val();
 					var password = $("#pass_sign").val();
 					if(password.length > 4){	
-						$.post('ajax/sign_up.php',{username:username,email:email,password:password},function(data){
+						$.post('ajax/signup.php',{username:username,email:email,password:password},function(data){
 							$('#make').html(data);
 						});
 					}

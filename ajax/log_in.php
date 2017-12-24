@@ -3,12 +3,12 @@
 include("../head/connect.php");
 //connect variable name: $conn
 
-if(isset($_POST['email']) === true & isset($_POST['password']) === true ){
-	$email = $_POST['email'];
+if(isset($_POST['phone_email']) === true & isset($_POST['password']) === true ){
+	$phone_email = $_POST['phone_email'];
 	$password = $_POST['password'];
 
 	//Get username, password, and salt
-	$userquery = mysqli_query($conn, "SELECT username,password,salt FROM users WHERE email='$email' AND closed='no'");
+	$userquery = mysqli_query($conn, "SELECT username,password,salt FROM users WHERE (email='$phone_email' OR phone='$phone_email') AND closed='no'");
 	$userCount = mysqli_num_rows($userquery);
 
 	if($userCount == 1){ //check if user exists
