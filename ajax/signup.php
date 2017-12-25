@@ -29,28 +29,16 @@ if(isset($_POST['username']) == true & isset($_POST['email']) == true & isset($_
 			$_SESSION["username"] = $username;
 			$_SESSION['email'] = $email;
 
-			$subject = "Hubuddies.com | Email Confirmation";
+			$userID = mysqli_insert_id($conn);
+			$emailUID = substr(str_shuffle($char), 0, 15);
+			$emailUID .= $userID;
+			$registering = mysqli_query($conn, "INSERT INTO IDConfirmation (EmailUID,Date,Confirmed,UserID) VALUES ('$emailUID','$date','0','$userID')");
 
+			$subject = "Hubuddies.com | Email Confirmation";
 			$message = "
 			<html>
 				<head>
 					<style>
-						/* latin-ext */
-						@font-face {
-						  font-family: 'Raleway';
-						  font-style: normal;
-						  font-weight: 300;
-						  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/ZKwULyCG95tk6mOqHQfRBCEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
-						  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-						}
-						/* latin */
-						@font-face {
-						  font-family: 'Raleway';
-						  font-style: normal;
-						  font-weight: 300;
-						  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-						  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-						}
 						body{
 							padding: 0px;
 							margin: 0px;
@@ -58,7 +46,7 @@ if(isset($_POST['username']) == true & isset($_POST['email']) == true & isset($_
 							background: #efefef;
 						}
 						a{
-							color: inherit;
+							color: #fff;
 							text-decoration: none;
 						}
 						header{
@@ -78,7 +66,6 @@ if(isset($_POST['username']) == true & isset($_POST['email']) == true & isset($_
 							background: #fff;
 							margin: 20px auto;
 							padding: 5px 2em;
-							box-shadow: 0px 0px 5px 0px #ccc;
 						}
 						h2{
 							text-align: center;
@@ -95,16 +82,16 @@ if(isset($_POST['username']) == true & isset($_POST['email']) == true & isset($_
 					</style>
 				</head>
 				<body>
-					<header><a href='http://www.hubuddies.com'>Hubuddies</a></header>
+					<header><a href='http://www.hubuddies.com/confirmation.php?uid=" . $emailUID . "'>Hubuddies</a></header>
 						<div class='card'>
 							<h2>Email Confirmation</h2>
 							Hi!<br><br>
 							Thank you for registering.<br><br>
 							To confirm your email address, just click the button below.<br><br>
-							<a href='http://www.hubuddies.com'><button id='submit'>Confirm my email address</button></a>
+							<a href='http://www.hubuddies.com/confirmation.php?uid=" . $emailUID . "'><button id='submit'>Confirm my email address</button></a>
 							<br>
 							<br>
-							If the button does not work, copy and paste this in the address.
+							If the button does not work, copy and paste this in the address bar: http://www.hubuddies.com/confirmation.php?uid=" . $emailUID . ".
 						</div>
 				</body>
 			</html>
