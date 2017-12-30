@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect('rayyanaqcom.domaincommysql.com', 'hubuddies', 'hubuddies17','hubuddies');
+$conn = mysqli_connect('server', 'username', 'password','database');
 ?>
