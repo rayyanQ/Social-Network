@@ -13,7 +13,7 @@ if(isset($_POST['username']) == true & isset($_POST['email']) == true & isset($_
 	//creating salt
 	$char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.";
 	$salt = substr(str_shuffle($char), 0, 15);
-	$password = md5(md5(sha1($password . $salt)));
+	$password = md5(md5(sha1($password . $salt)));//need to change
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
 	$usernameCheck = mysqli_query($conn, "SELECT Username FROM Users WHERE Username='$username'");

@@ -8,15 +8,15 @@ if(isset($_POST['phone_email']) === true & isset($_POST['password']) === true ){
 	$password = $_POST['password'];
 
 	//Get username, password, and salt
-	$userquery = mysqli_query($conn, "SELECT username,password,salt FROM users WHERE (email='$phone_email' OR phone='$phone_email') AND closed='no'");
+	$userquery = mysqli_query($conn, "SELECT Username,Password,Salt FROM Users WHERE (Email='$phone_email' OR Phone='$phone_email') AND Closed='0'");
 	$userCount = mysqli_num_rows($userquery);
 
 	if($userCount == 1){ //check if user exists
 		$row = mysqli_fetch_assoc($userquery);
-		$username = $row["username"];
-		$salt = $row["salt"];
-		$hash = $row['password'];
-		$password = $password . $salt;
+		$username = $row["Username"];
+		$salt = $row["Salt"];
+		$hash = $row['Password'];
+		$password = md5(md5(sha1($password . $salt)));//need to change
 
 		if(password_verify($password, $hash)){ //check password
 			session_start();
