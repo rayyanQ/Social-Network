@@ -65,6 +65,7 @@
 					<input type="text" class="txt" id="phone_email_log" placeholder="Email/Mobile Number" required="required"><br>
 					<input type="password" class="txt" id="pass_log" placeholder="Password" required="required"><br>
 					<b id="error"></b><br>
+					<a href="forgot.php">Forgot password?</a><br>
 					<input type="submit" value="Submit" class="submit">
 				</form>
 				<form method="post" class="form" id="sign_up">

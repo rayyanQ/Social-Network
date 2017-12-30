@@ -57,6 +57,7 @@ else
 			<a href="logout.php" class="nav_item">Logout</a>
 		</div>
 		<center id="body">
+			Redesigning
 			<?php
 				if(numOfHubs > 0){
 					echo"
